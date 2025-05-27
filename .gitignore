@@ -1,0 +1,69 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# C/C++ / build products
+*.dll
+*.so
+*.dylib
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Unit test / coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE-specific files (e.g., VS Code)
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# YOLOv5 specific (adjust as needed)
+# The 'runs' directory can get very large with training results.
+# It's usually better to not upload the entire 'runs' directory,
+# but you *do* need the 'best.pt' file.
+# So, we'll ignore the whole 'runs' folder, but then explicitly
+# NOT ignore the 'weights' subfolder where 'best.pt' is.
+runs/
+!runs/
+!runs/train/
+!runs/train/*/
+!runs/train/*/weights/
+runs/train/*/weights/temp_*.pt # Example for temp files if they exist
+# If your best.pt is outside 'runs' or directly in 'yolov5',
+# ensure you don't ignore it. For your structure:
+!yolov5/runs/
+!yolov5/runs/train/
+!yolov5/runs/train/*/
+!yolov5/runs/train/*/weights/
+yolov5/runs/train/*/weights/*.pt # This would ignore ALL .pt files
+!yolov5/runs/train/*/weights/best.pt # This line is critical to include best.pt
+
+# Logs
+*.log
+log/
+
+# Sensitive/temporary files
+*.sqlite3
+.env
+
+# Add other large files you don't want to commit
+# For example, if you have very large datasets in your project root
+# data/
